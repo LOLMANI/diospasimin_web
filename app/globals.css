@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  /* Aquí declaramos los colores de tu diseño para Tailwind v4 */
+  --color-dios-dark: #1F0B05;
+  --color-dios-brown: #5E280F;
+  --color-dios-cream: #FCFBF7;
+  --color-dios-orange: #E48810;
+  --color-dios-gold: #F4D8A6;
+  --color-dios-text: #4A2111;
+}
+
+body {
+  background-color: var(--color-dios-cream);
+  color: var(--color-dios-text);
+}

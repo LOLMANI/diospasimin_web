@@ -40,19 +40,13 @@ export default function Footer() {
       </div>
 
       {/* Barra inferior */}
-      <div className="w-full max-w-5xl border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider text-gray-400 font-medium">
+      <div className="w-full max-w-5xl border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-center items-center gap-4 text-xs tracking-wider text-gray-400 font-medium">
         <div className="flex items-center gap-2">
           <div className="bg-dios-orange p-1 rounded">
             <BookOpen size={14} className="text-white" />
           </div>
           <span>RIMAY RELEE - AYACUCHO, PERÚ</span>
         </div>
-        
-        <nav className="flex gap-6">
-          <Link href="/" className="hover:text-white transition">INICIO</Link>
-          <Link href="/" className="hover:text-white transition">PRIVACIDAD</Link>
-          <Link href="/" className="hover:text-white transition">CONTACTO</Link>
-        </nav>
       </div>
     </footer>
   );

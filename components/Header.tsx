@@ -19,11 +19,10 @@ export default function Header() {
       <p className="text-lg md:text-xl italic font-light max-w-2xl mb-8 opacity-90">
         &quot;Jesuspa Dios kasqanmanta hinaspa rurayninkunamanta yachanapaq&quot;
       </p>
-
-      <button className="bg-dios-orange text-white px-6 py-2 rounded-full font-medium hover:bg-orange-600 transition flex items-center gap-2 cursor-pointer">
+      {/* <button className="bg-dios-orange text-white px-6 py-2 rounded-full font-medium hover:bg-orange-600 transition flex items-center gap-2 cursor-pointer">
         Explorar Materias
         <span className="text-sm">▼</span>
-      </button>
+      </button> */}
     </header>
   );
 }

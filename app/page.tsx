@@ -1,8 +1,8 @@
 'use client'; // Necesario para usar el buscador en tiempo real
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import SearchBar from "../components/SearchBar";
-import Module, { Lesson } from "../components/Module";
+import Module, { type Lesson } from "../components/Module";
 import VideoModal from "../components/VideoModal";
 
 export default function Home() {
@@ -259,37 +259,37 @@ export default function Home() {
   ];
 
   const allModulesData = [
-    { number: "01", title: "LOS FUNDAMENTOS DE LA FE", lessons: modulo_a1 },
-    { number: "02", title: "LA VIDA SOBRENATURAL Y LA SANIDAD", lessons: modulo_a2 },
-    { number: "03", title: "ESTUDIO PANORÁMICO DEL NUEVO TESTAMENTO", lessons: modulo_a3 },
-    { number: "04", title: "ALABANZA Y ADORACIÓN", lessons: modulo_a4 },
-    { number: "05", title: "EL PODER DE LA ORACIÓN", lessons: modulo_b1 },
-    { number: "06", title: "EL MINISTERIO DE AYUDAS", lessons: modulo_b2 },
-    { number: "07", title: "ESTUDIO PANORÁMICO DEL ANTIGUO TESTAMENTO", lessons: modulo_b3 },
-    { number: "08", title: "LA ESENCIA DEL EVANGELIO", lessons: modulo_b4 },
-    { number: "09", title: "JESÚS SANA HOY", lessons: modulo_b5 },
-    { number: "10", title: "MOVILIZAR PARA MULTIPLICAR", lessons: modulo_c1 },
-    { number: "11", title: "CÓMO DESARROLLAR UNA ESCUELA BÍBLICA EN SU IGLESIA", lessons: modulo_c2 },
-    { number: "12", title: "LOS GRUPOS CELULARES", lessons: modulo_c3 },
-    { number: "13", title: "EL EVANGELISMO CON PODER", lessons: modulo_c4 },
-    { number: "14", title: "LA INTEGRIDAD Y LIDERAZGO", lessons: modulo_c5 },
-    { number: "15", title: "LOS LÍDERES Y SU VISIÓN", lessons: modulo_c6 },
-    { number: "16", title: "CÓMO PLANTAR IGLESIAS USANDO EQUIPOS", lessons: modulo_c7 },
-    { number: "17", title: "CÓMO SER GUIADOS POR EL ESPÍRITU SANTO", lessons: modulo_c8 },
-    { number: "18", title: "MENTALIDAD DE DESIERTO", lessons: modulo_d1 },
-    { number: "19", title: "CÓMO DESARROLLAR LÍDERES", lessons: modulo_d2 },
-    { number: "20", title: "CÓMO SER LÍDER DE UN GRUPO CELULAR", lessons: modulo_d3 },
-    { number: "21", title: "LA RECONCILIACIÓN", lessons: modulo_d4 },
-    { number: "22", title: "EL EVANGELISMO PERSONAL", lessons: modulo_d5 },
-    { number: "23", title: "LA GUERRA ESPIRITUAL", lessons: modulo_d6 },
-    { number: "24", title: "LA AUTORIDAD Y EL PERDÓN", lessons: modulo_d7 },
-    { number: "25", title: "VICTORIA ESPIRITUAL", lessons: modulo_d8 },
-    { number: "26", title: "LA CONEXIÓN CON CRISTO", lessons: modulo_e1 },
-    { number: "27", title: "VIVIENDO PARA DAR", lessons: modulo_e2 },
-    { number: "28", title: "LA ANCIANIDAD BÍBLICA", lessons: modulo_e3 },
-    { number: "29", title: "ALCANCEMOS UNA NUEVA GENERACIÓN", lessons: modulo_e4 },
-    { number: "30", title: "CÓMO ADMINISTRAR LA IGLESIA PARA EL MAÑANA", lessons: modulo_e5 },
-    { number: "31", title: "LA MINISTRACIÓN DE JÓVENES", lessons: modulo_e6 }
+    { number: "01", title: "IMAKUNAPIM IÑIYNINCHIK SAPINCHASQA KASQANMANTA / LOS FUNDAMENTOS DE LA FE", lessons: modulo_a1 },
+    { number: "02", title: "DIOSPA ATIYNINPI KAWSASPA UNQUQKUNATA SANOYACHINAMANTA / LA VIDA SOBRENATURAL Y LA SANIDAD", lessons: modulo_a2 },
+    { number: "03", title: "MUSUQ TESTAMENTOMANTA / ESTUDIO PANORÁMICO DEL NUEVO TESTAMENTO", lessons: modulo_a3 },
+    { number: "04", title: "DIOSTA IMAYNATAM YUPAYCHANAMANTA / ALABANZA Y ADORACIÓN", lessons: modulo_a4 },
+    { number: "05", title: "MAÑAKUYPA ATIYNINMANTA / EL PODER DE LA ORACIÓN", lessons: modulo_b1 },
+    { number: "06", title: "IGLESIAPI YANAPAKUNAMANTA / EL MINISTERIO DE AYUDAS", lessons: modulo_b2 },
+    { number: "07", title: "ÑAWPAQ TESTAMENTOMANTA / ESTUDIO PANORÁMICO DEL ANTIGUO TESTAMENTO", lessons: modulo_b3 },
+    { number: "08", title: "EVANGELIOPA SUNQUNMANTA / LA ESENCIA DEL EVANGELIO", lessons: modulo_b4 },
+    { number: "09", title: "JESUS HAMPIWAQNINCHIK KASQANMANTA / JESÚS SANA HOY", lessons: modulo_b5 },
+    { number: "10", title: "KAY YACHACHIKUYKUNA IMAPAQMI KASQANMANTA / MOVILIZAR PARA MULTIPLICAR", lessons: modulo_c1 },
+    { number: "11", title: "IMAYNATAM IGLESIAPI ESCUELA BIBLICATA HATARICHINAMANTA / CÓMO DESARROLLAR UNA ESCUELA BÍBLICA EN SU IGLESIA", lessons: modulo_c2 },
+    { number: "12", title: "IGLESIATA MIRACHINAPAQ TAKSA GRUPOKUNAWAN LLAMKANAMANTA / LOS GRUPOS CELULARES", lessons: modulo_c3 },
+    { number: "13", title: "EVANGELIOTA ATIYWAN WILLAKUNAMANTA / EL EVANGELISMO CON PODER", lessons: modulo_c4 },
+    { number: "14", title: "LIMPIO SUNQUWAN ALLIN KAWSAKUYPI PURINANCHIKMANTA / LA INTEGRIDAD Y LIDERAZGO", lessons: modulo_c5 },
+    { number: "15", title: "DIOSPA OBRANPI LLAMKANANCHIKMANTA / LOS LÍDERES Y SU VISIÓN", lessons: modulo_c6 },
+    { number: "16", title: "GRUPOKUNATA FORMASPA MUSUQ IGLESIAKUNATA HATARICHINAMANTA / CÓMO PLANTAR IGLESIAS USANDO EQUIPOS", lessons: modulo_c7 },
+    { number: "17", title: "KAWSAYNINCHIKPI CHUYA ESPIRITUPA GUIASQAN KANANCHIKMANTA / CÓMO SER GUIADOS POR EL ESPÍRITU SANTO", lessons: modulo_c8 },
+    { number: "18", title: "DIOSPA PROMESANKUNAN HAYPANATA IMAKUNAM HARKAWASQANCHIKMANTA / MENTALIDAD DE DESIERTO", lessons: modulo_d1 },
+    { number: "19", title: "LIDERAZGOMANTA / CÓMO DESARROLLAR LÍDERES", lessons: modulo_d2 },
+    { number: "20", title: "TAKSA GRUPOKUNAPI ALLIN LIDER KANAMANTA / CÓMO SER LÍDER DE UN GRUPO CELULAR", lessons: modulo_d3 },
+    { number: "21", title: "HUKLLA KAWSAKUNAMANTA / LA RECONCILIACIÓN", lessons: modulo_d4 },
+    { number: "22", title: "EVANGELIOTA SAPA RUNAMAN WILLAKUNAMANTA / EL EVANGELISMO PERSONAL", lessons: modulo_d5 },
+    { number: "23", title: "SUPAYTA VENCENAMANTA / LA GUERRA ESPIRITUAL", lessons: modulo_d6 },
+    { number: "24", title: "PAMPACHANAKUNANCHIKMANTA / LA AUTORIDAD Y EL PERDÓN", lessons: modulo_d7 },
+    { number: "25", title: "DIOS VENCECHIWASQANCHIKMANTA / VICTORIA ESPIRITUAL", lessons: modulo_d8 },
+    { number: "26", title: "CRISTOWAN HUKLLAÑA KASQANCHIKMANTA / LA CONEXIÓN CON CRISTO", lessons: modulo_e1 },
+    { number: "27", title: "KAPUQNINCHIKWAN DIOSTA SIRVIKUNAMANTA / VIVIENDO PARA DAR", lessons: modulo_e2 },
+    { number: "28", title: "IMAPAQMI DIOS MINISTERIOKUNATA IGLESIAPI HATARICHISQANMANTA / LA ANCIANIDAD BÍBLICA", lessons: modulo_e3 },
+    { number: "29", title: "WARMAKUNAWAN IMAYNATAM LLAMKANAMANTA / ALCANCEMOS UNA NUEVA GENERACIÓN", lessons: modulo_e4 },
+    { number: "30", title: "WARMAKUNATA DIOSPAQ IMAYNAM QISPICHINAMANTA / CÓMO ADMINISTRAR LA IGLESIA PARA EL MAÑANA", lessons: modulo_e5 },
+    { number: "31", title: "JOVENKUNAWAN LLAMKANAMANTA / LA MINISTRACIÓN DE JÓVENES", lessons: modulo_e6 }
   ];
 
   // ==========================================

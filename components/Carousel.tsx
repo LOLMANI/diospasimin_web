@@ -95,25 +95,17 @@ export default function Carousel() {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {slides.map((slide, index) => (
-          <div key={index} className="w-full h-full flex-shrink-0 relative bg-black overflow-hidden">
-            {/* Blurred Background Layer */}
-            <Image 
-              src={slide.src} 
-              alt={`${slide.alt} fondo`} 
-              fill 
-              className="object-cover blur-xl opacity-60 scale-110 pointer-events-none select-none"
-              priority={index === 0}
-              draggable={false}
-            />
-            {/* Main Contained Image */}
-            <Image 
-              src={slide.src} 
-              alt={slide.alt} 
-              fill 
-              className="object-contain relative z-10 pointer-events-none select-none"
-              priority={index === 0}
-              draggable={false}
-            />
+          <div key={index} className="w-full h-full flex-shrink-0 relative overflow-hidden flex items-center justify-center bg-transparent">
+          {/* Main Image (no blurred background) */}
+          <Image
+            src={slide.src}
+            alt={slide.alt}
+            fill
+            className="object-contain relative z-10 pointer-events-none select-none"
+            priority={index === 0}
+            draggable={false}
+            sizes="(max-width: 640px) 100vw, 100vw"
+          />
           </div>
         ))}
       </div>
@@ -123,7 +115,7 @@ export default function Carousel() {
       {/* Navigation Controls */}
       <button 
         onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-        className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full backdrop-blur-sm transition opacity-0 group-hover:opacity-100 z-30"
+        className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition opacity-0 group-hover:opacity-100 z-30"
         aria-label="Previous Slide"
       >
         <ChevronLeft size={32} />
@@ -131,7 +123,7 @@ export default function Carousel() {
       
       <button 
         onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-        className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full backdrop-blur-sm transition opacity-0 group-hover:opacity-100 z-30"
+        className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition opacity-0 group-hover:opacity-100 z-30"
         aria-label="Next Slide"
       >
         <ChevronRight size={32} />

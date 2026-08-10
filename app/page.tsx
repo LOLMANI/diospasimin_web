@@ -334,7 +334,7 @@ export default function Home() {
   return (
     <div className="w-full flex flex-col items-center min-h-[60vh] pb-12">
       {/* Hero Carousel */}
-      <Carousel />
+      <Carousel variant="blur" />
 
       {/* Quechua Motto Banner */}
       <div className="w-full bg-dios-dark text-center py-6 px-4 border-b-4 border-dios-orange flex flex-col items-center justify-center shadow-inner relative z-10">

@@ -28,7 +28,7 @@ export default function VideoModal({ isOpen, onClose, title, titleSpanish, youtu
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      <div className="fixed inset-0 bg-black/90 transition-opacity" onClick={onClose} />
+      <div className="fixed inset-0 bg-black/90 transition-opacity" />
       
       <div className="relative w-full max-w-4xl flex flex-col items-center z-10">
         <div className="relative w-full bg-[#FCFBF7] rounded-3xl shadow-2xl overflow-hidden flex flex-col">

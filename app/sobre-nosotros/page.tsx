@@ -36,10 +36,10 @@ export default function SobreNosotros() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card 1: El Comienzo */}
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 flex flex-col gap-4 hover:shadow-md transition-shadow">
-            <div className="size-12 bg-dios-cream rounded-xl border border-dios-gold/30 flex items-center justify-center text-dios-orange">
+            <div className="size-12 mx-auto bg-dios-cream rounded-xl border border-dios-gold/30 flex items-center justify-center text-dios-orange">
               <History size={24} />
             </div>
-            <h2 className="text-xl md:text-2xl font-bold text-dios-brown">El Comienzo (Año 2000)</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-dios-brown text-center">El Comienzo (Año 2000)</h2>
             <p className="text-dios-text/90 leading-relaxed text-sm md:text-base text-justify">
               Este material forma parte de un trabajo que comenzó en el año 2000, cuando Dios puso en el corazón de siervos suyos el deseo de servir al pueblo quechua en los Andes del Perú.
             </p>
@@ -50,10 +50,10 @@ export default function SobreNosotros() {
 
           {/* Card 2: Gratitud y Colaboración */}
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 flex flex-col gap-4 hover:shadow-md transition-shadow">
-            <div className="size-12 bg-dios-cream rounded-xl border border-dios-gold/30 flex items-center justify-center text-dios-orange">
+            <div className="size-12 mx-auto bg-dios-cream rounded-xl border border-dios-gold/30 flex items-center justify-center text-dios-orange">
               <Users size={24} />
             </div>
-            <h2 className="text-xl md:text-2xl font-bold text-dios-brown">Gratitud y Esfuerzo</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-dios-brown text-center">Gratitud y Esfuerzo</h2>
             <p className="text-dios-text/90 leading-relaxed text-sm md:text-base text-justify">
               A lo largo de los años, muchos hermanos entregaron su tiempo, esfuerzo y amor para hacer posible la traducción y adaptación de este material al quechua. Entre ellos, se puede mencionar a la familia Mendoza, la familia Garay, la familia Espinoza, Ingrid Burger, por señalar algunos que fueron parte de este ministerio.
             </p>
@@ -75,12 +75,12 @@ export default function SobreNosotros() {
         </div>
 
         {/* Card 3: El Sueño Continúa (Full Width) */}
-        <div className="bg-gradient-to-r from-dios-cream to-white rounded-3xl p-8 shadow-sm border border-dios-gold/30 flex flex-col md:flex-row gap-6 items-start hover:shadow-md transition-shadow">
-          <div className="size-14 bg-white rounded-2xl border border-dios-gold/40 flex items-center justify-center text-dios-orange flex-shrink-0 self-center md:self-start">
+        <div className="bg-gradient-to-r from-dios-cream to-white rounded-3xl p-8 shadow-sm border border-dios-gold/30 flex flex-col gap-6 items-center hover:shadow-md transition-shadow">
+          <div className="size-14 mx-auto bg-white rounded-2xl border border-dios-gold/40 flex items-center justify-center text-dios-orange flex-shrink-0">
             <Flame size={28} className="animate-pulse" />
           </div>
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-dios-brown">El Sueño Continúa</h2>
+          <div className="space-y-4 w-full">
+            <h2 className="text-2xl font-bold text-dios-brown text-center">El Sueño Continúa</h2>
             <p className="text-dios-text/90 leading-relaxed text-sm md:text-base text-justify">
               Actualmente, la asociación <strong>&quot;Ministerios Andinos del Perú&quot;</strong> que impulsó este trabajo ya no se encuentra en funcionamiento; sin embargo, todo este material permanece disponible para todo aquel que desee aprender y crecer en la Palabra de Dios.
             </p>

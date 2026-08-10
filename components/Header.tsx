@@ -11,7 +11,7 @@ export default function Header() {
   const pathname = usePathname();
 
   const navLinks = [
-    { name: 'HOME', href: '/' },
+    { name: 'INICIO', href: '/' },
     { name: 'SOBRE NOSOTROS', href: '/sobre-nosotros' },
     { name: 'CONTACTO', href: '/contacto' },
   ];
@@ -77,8 +77,8 @@ export default function Header() {
 
       {/* Mobile Navigation Dropdown */}
       <div 
-        className={`md:hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-60 opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'
+        className={`md:hidden absolute left-0 right-0 top-full transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-60 opacity-100 visible shadow-lg' : 'max-h-0 opacity-0 invisible overflow-hidden'
         }`}
       >
         <div className="px-2 pt-2 pb-4 space-y-1 bg-dios-dark border-t border-dios-brown/20 shadow-inner">

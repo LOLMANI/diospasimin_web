@@ -323,12 +323,12 @@ export default function Home() {
     }
 
     // Filtramos JORNADAS
-    const filteredLessons = mod.lessons.filter(lesson => 
+    const filteredLessons = mod.lessons.filter(lesson =>
       matchesAllWords(lesson.titleQuechua) || matchesAllWords(lesson.titleSpanish)
     );
 
     return { ...mod, lessons: filteredLessons };
-    
+
   }).filter(mod => mod.lessons.length > 0);
 
   return (
@@ -336,47 +336,73 @@ export default function Home() {
       {/* Hero Carousel */}
       <Carousel />
 
+      {/* Quechua Motto Banner */}
+      <div className="w-full bg-dios-dark text-center py-6 px-4 border-b-4 border-dios-orange flex flex-col items-center justify-center shadow-inner relative z-10">
+        <p className="text-[10px] md:text-xs tracking-[0.3em] font-bold text-dios-gold mb-2 uppercase">
+          Iñiypa Yachay Wasin
+        </p>
+        <p className="text-sm md:text-base italic font-light text-white/90 max-w-2xl leading-relaxed">
+          &quot;Jesuspa Dios kasqanmanta hinaspa rurayninkunamanta yachanapaq&quot;
+        </p>
+      </div>
+
+      {/* Sección de Bienvenida */}
+      <section className="w-full max-w-4xl px-6 pt-16 pb-8 md:pt-20 md:pb-12 text-center flex flex-col items-center justify-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-dios-brown mb-6">
+          Aprende la palabra de Dios en quechua
+        </h2>
+        <div className="w-16 md:w-24 h-1 bg-dios-gold mb-8 rounded-full"></div>
+        <div className="text-lg md:text-xl text-gray-700 leading-relaxed font-light max-w-3xl space-y-6">
+          <p>
+            Este programa audiovisual ha sido creado para que aprendas la Palabra de Dios a tu propio ritmo y desde cualquier lugar. Gracias al esfuerzo de muchas personas y con la bendición de Dios, este material fue traducido al idioma quechua para que más personas puedan conocer Su mensaje.
+          </p>
+          <p>
+            Ponemos a tu disposición este curso completamente gratuito. Anímate a dar el primer paso, mira las lecciones y descubre lo que Dios tiene preparado para tu vida.
+          </p>
+        </div>
+      </section>
+
       <BookBanner />
 
       {/* Main Content Area */}
       <div className="w-full max-w-5xl px-6 pt-12 flex flex-col items-center">
-      
-      {/* El buscador (le pasamos el estado) */}
-      <SearchBar searchTerm={searchTerm} onSearch={setSearchTerm} />
 
-      {/* Mensaje por si no hay resultados */}
-      {filteredModules.length === 0 && (
-        <div className="text-center mt-10">
-          <p className="text-2xl font-bold text-dios-brown mb-2">No se encontraron resultados</p>
-          <p className="text-gray-500">Prueba buscando con otras palabras como &quot;Jesús&quot;, &quot;Sanidad&quot; o &quot;Espíritu&quot;.</p>
+        {/* El buscador (le pasamos el estado) */}
+        <SearchBar searchTerm={searchTerm} onSearch={setSearchTerm} />
+
+        {/* Mensaje por si no hay resultados */}
+        {filteredModules.length === 0 && (
+          <div className="text-center mt-10">
+            <p className="text-2xl font-bold text-dios-brown mb-2">No se encontraron resultados</p>
+            <p className="text-gray-500">Prueba buscando con otras palabras como &quot;Jesús&quot;, &quot;Sanidad&quot; o &quot;Espíritu&quot;.</p>
+          </div>
+        )}
+
+        {/* Los Módulos Generados Automáticamente */}
+        <div className="w-full flex flex-col gap-4">
+
+          {filteredModules.map(mod => (
+            <Module
+              key={mod.number}
+              number={mod.number}
+              titleQuechua={mod.titleQuechua}
+              titleSpanish={mod.titleSpanish}
+              lessons={mod.lessons}
+              isExpanded={searchTerm.length > 0} // Si hay texto en el buscador, se abre solo
+              onSelectLesson={(lesson) => setSelectedLesson(lesson)}
+            />
+          ))}
         </div>
-      )}
-
-      {/* Los Módulos Generados Automáticamente */}
-      <div className="w-full flex flex-col gap-4">
-
-        {filteredModules.map(mod => (
-          <Module 
-            key={mod.number}
-            number={mod.number} 
-            titleQuechua={mod.titleQuechua}
-            titleSpanish={mod.titleSpanish} 
-            lessons={mod.lessons} 
-            isExpanded={searchTerm.length > 0} // Si hay texto en el buscador, se abre solo
-            onSelectLesson={(lesson) => setSelectedLesson(lesson)}
-          />
-        ))}
-      </div>
 
       </div>
 
-      <VideoModal 
-        isOpen={selectedLesson !== null} 
-        onClose={() => setSelectedLesson(null)} 
+      <VideoModal
+        isOpen={selectedLesson !== null}
+        onClose={() => setSelectedLesson(null)}
         title={selectedLesson?.titleQuechua || ""}
         titleSpanish={selectedLesson?.titleSpanish}
         youtubeId={selectedLesson?.youtubeId}
-        startTime={selectedLesson?.startTime} 
+        startTime={selectedLesson?.startTime}
       />
     </div>
   );

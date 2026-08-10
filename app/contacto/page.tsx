@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { MessageCircle, Mail, BookOpen, Globe, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contacto - Diospasimin",
+  title: "Contacto - Diospa simin",
   description: "Escríbenos por WhatsApp al +51 972 600 104 para solicitar libros de estudio y materiales de enseñanza en quechua o español.",
 };
 
@@ -27,11 +27,12 @@ export default function Contacto() {
 
       {/* Main Content Details */}
       <section className="w-full max-w-4xl px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
           
           {/* Left Column: Info & Materials */}
-          <div className="md:col-span-7 bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 space-y-6">
-            <h2 className="text-2xl font-bold text-dios-brown">¿Cómo podemos ayudarte?</h2>
+          <div className="md:col-span-7 bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 flex flex-col justify-between h-full">
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-dios-brown">¿Cómo podemos ayudarte?</h2>
             
             <p className="text-dios-text/90 leading-relaxed text-justify text-base">
               Si deseas acceder al material complementario o tienes alguna consulta, puedes escribirnos directamente. Será una gran alegría poder guiarte y compartir contigo estos recursos.
@@ -65,7 +66,9 @@ export default function Contacto() {
               </ul>
             </div>
 
-            <div className="bg-dios-cream/50 rounded-2xl p-4 border border-dios-gold/20 flex items-center gap-3">
+            </div>
+
+            <div className="bg-dios-cream/50 rounded-2xl p-4 border border-dios-gold/20 flex items-center gap-3 mt-6">
               <CheckCircle2 size={20} className="text-dios-orange flex-shrink-0" />
               <p className="text-xs md:text-sm text-dios-text/80 italic font-medium">
                 Todo el material se comparte de manera libre y gratuita.
@@ -74,10 +77,10 @@ export default function Contacto() {
           </div>
 
           {/* Right Column: Dynamic Action Cards */}
-          <div className="md:col-span-5 space-y-6">
+          <div className="md:col-span-5 flex flex-col justify-between h-full gap-6">
             
             {/* WhatsApp Contact Card */}
-            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center gap-4 hover:shadow-md transition-shadow">
+            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow flex-1">
               <div className="size-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center border border-green-100">
                 <MessageCircle size={32} />
               </div>
@@ -95,13 +98,18 @@ export default function Contacto() {
                 <MessageCircle size={18} />
                 Chatear en WhatsApp
               </a>
-              <span className="text-sm font-semibold text-dios-text/80 tracking-wider">
-                +51 972 600 104
-              </span>
+              <div className="flex flex-col items-center">
+                <span className="text-sm font-semibold text-dios-text/80 tracking-wider">
+                  +51 972 600 104
+                </span>
+                <span className="text-xs text-gray-500 font-medium mt-1">
+                  Hermana Ingrid
+                </span>
+              </div>
             </div>
 
             {/* Email Contact Card */}
-            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center gap-4 hover:shadow-md transition-shadow">
+            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center gap-4 hover:shadow-md transition-shadow flex-1">
               <div className="size-14 bg-dios-cream text-dios-orange rounded-2xl flex items-center justify-center border border-dios-gold/20">
                 <Mail size={28} />
               </div>

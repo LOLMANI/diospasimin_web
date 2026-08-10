@@ -32,7 +32,7 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-2 group transition">
               <Image 
                 src="/logos/logo2.png" 
-                alt="Diospasimin Logo" 
+                alt="Diospa simin Logo" 
                 width={180} 
                 height={45} 
                 className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-102"

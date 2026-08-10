@@ -15,7 +15,7 @@ export default function BookBanner() {
               ¿Quieres profundizar más?
             </h3>
             <p className="text-white/80 text-sm md:text-base">
-              Si quieres obtener el libro completo de enseñanzas para seguir aprendiendo.
+              Solicita de forma 100% gratuita el libro completo de enseñanzas para seguir aprendiendo.
             </p>
           </div>
         </div>
@@ -24,7 +24,7 @@ export default function BookBanner() {
           href="/contacto" 
           className="bg-dios-gold hover:bg-dios-orange text-white font-bold py-3 px-8 rounded-full transition shadow-md whitespace-nowrap"
         >
-          Obtener Libro
+          Obtener Libro Gratis
         </Link>
       </div>
     </div>

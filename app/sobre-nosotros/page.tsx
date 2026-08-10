@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Users, History, Flame } from "lucide-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Sobre Nosotros - Diospasimin",
-  description: "Conoce la historia detrás de Diospasimin.com, el esfuerzo de traducción al quechua iniciado en el año 2000 y nuestro deseo de seguir compartiendo las Escrituras.",
+  title: "Sobre Nosotros - Diospa simin",
+  description: "Conoce la historia detrás de Diospa simin, el esfuerzo de traducción al quechua iniciado en el año 2000 y nuestro deseo de seguir compartiendo las Escrituras.",
 };
 
 export default function SobreNosotros() {
@@ -60,6 +61,17 @@ export default function SobreNosotros() {
               Gracias a este trabajo, se lograron desarrollar enseñanzas organizadas en módulos, acompañadas de materiales de estudio y recursos audiovisuales, los cuales han sido de ayuda para muchos hermanos en distintas comunidades.
             </p>
           </div>
+        </div>
+
+        {/* Imagen del Equipo de Traducción */}
+        <div className="w-full rounded-3xl overflow-hidden shadow-md border border-dios-gold/20 hover:shadow-lg transition-shadow">
+          <Image 
+            src="/carousel/Mesa%20de%20trabajo%207.png" 
+            alt="Equipo de Traducción Diospa simin" 
+            width={1200} 
+            height={600} 
+            className="w-full h-auto object-cover"
+          />
         </div>
 
         {/* Card 3: El Sueño Continúa (Full Width) */}
